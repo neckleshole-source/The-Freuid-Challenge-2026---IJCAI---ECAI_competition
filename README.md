@@ -39,12 +39,12 @@ If running inside a Kaggle Notebook, configure your notebook settings to use a G
 ​APCER @ 1% BPCER: Measures the Attack Presentation Classification Error Rate at a fixed 1\% False Alarm limit.
 ​We calculate "goodness" scores:
 ```
-g_{\text{audet}} = 1 - AuDET
-g_{\text{apcer}} = 1 - APCER_{@1\%\text{BPCER}}
+g_{{audet}} = 1 - AuDET
+g_{{apcer}} = 1 - APCER_{@1\%\{BPCER}}
 ```
 The final score is the inverted harmonic mean of these values:
 ```
-\text{FREUID} = 1 - \frac{2 \cdot g_{\text{audet}} \cdot g_{\text{apcer}}}{g_{\text{audet}} + g_{\text{apcer}}}
+{FREUID} = 1 - \frac{2 \cdot g_{{audet}} \cdot g_{{apcer}}}{g_{{audet}} + g_{{apcer}}}
 
 ```
 🚀 Execution Guide
@@ -62,4 +62,5 @@ Expected Output Files:
 ​`output.csv`: Final inference data containing the following structure:
 
 |image id | image path | label |
-|---------|------------|-------|
+|ID_0921 | private_test/US_ID_0921.jpg | 0.984210 |
+|ID_0411 | private_test/DE_DL_0411.png | 0.001041 |
