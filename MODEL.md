@@ -47,10 +47,12 @@ If $\sigma^2 > 150$, the file is classified as natively digital (is_digital = 1)
 ​If $\sigma^2<=150$, it has undergone a physical recapture step (is_digital = 0).
 
 ​📈 Training and Validation Pipeline
+
 ​Optimization Parameters
-​Optimizer: AdamW (Learning Rate: 1\times10^{-4} for stable gradient updates during fine-tuning).
-​Loss Function: Binary Cross Entropy Loss (BCELoss).
-​Batch Size: 16 (optimized for GPU VRAM limits).
+
+​○ Optimizer: AdamW (Learning Rate: $1\times10^{-4}$ for stable gradient updates during fine-tuning).
+​○ Loss Function: Binary Cross Entropy Loss (BCELoss).
+​○ Batch Size: 16 (optimized for GPU VRAM limits).
 
 Train / Validation Partitioning
 ​To ensure our calculated FREUID Score is mathematically sound and reflects general performance, the combined training data is systematically split:
