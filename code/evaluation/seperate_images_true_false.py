@@ -97,5 +97,28 @@ def filter_and_isolate_cards(csv_path, image_folder_path, output_true_csv, outpu
         print("ℹ️ No false cards found meeting the criteria.")
 
     print(f"\n✅ All execution operations completed successfully!")
+    # --- CONFIGURATION AND PATH SETTINGS ---
+if __name__ == "__main__":
+    # Input paths
+    INPUT_CSV = "/kaggle/input/datasets/holeneckles/the-freuid-challenge-2026-ijcai-ecai/train_labels.csv"
+    IMAGE_FOLDER = "/kaggle/input/datasets/holeneckles/the-freuid-challenge-2026-ijcai-ecai/train/train"
+    
+    # Requested Output CSV paths
+    OUTPUT_TRUE_CSV = "/kaggle/working/output_true.csv"
+    OUTPUT_FALSE_CSV = "/kaggle/working/output_false.csv"
+    
+    # Requested Output Folder paths
+    TARGET_TRUE_FOLDER = "selected_true_cards"
+    TARGET_FALSE_FOLDER = "selected_false_cards"
+    
+    # Run the complete routine
+    filter_and_isolate_cards(
+        csv_path=INPUT_CSV, 
+        image_folder_path=IMAGE_FOLDER, 
+        output_true_csv=OUTPUT_TRUE_CSV, 
+        output_false_csv=OUTPUT_FALSE_CSV, 
+        true_folder=TARGET_TRUE_FOLDER, 
+        false_folder=TARGET_FALSE_FOLDER
+    )
 
 
