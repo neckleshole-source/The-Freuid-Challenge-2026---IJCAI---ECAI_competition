@@ -30,8 +30,10 @@ This program operates in three sequential phases:
 ├── submissions.csv                # private-test folder result
 ├── README.md                      # Project Overview (This file)
 ├── LISENCE                        # OSI-approved open-source license - MIT
-├── Dockerfile                     # Runnable github Docker image 
+├── Dockerfile                     # Runnable github Docker image
+├── requirements.txt               # includes requirements for running program
 └── model.md                       # Deep Model and Feature Engineering Spec
+
 
 ```
 🔧 Installation & Requirements
