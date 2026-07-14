@@ -20,7 +20,8 @@ This program operates in three sequential phases:
 ```text
 ├── code
      ├── evaluation 
-          ├── identity_detector.py      # Main pipeline script (Local or Kaggle run)
+          ├── prediction_submission.py      # Main pipeline script (Local or Kaggle run)
+          ├── seperate_images_true_false.py # choosing True and False images from train folder and train_labels.csv and add own folders ans csv files.
 ├── data 
      ├── true_documents/           # Directory with authentic IDs / Drivers Licenses
      ├── false_documents/          # Directory with manipulated/counterfeit documents
