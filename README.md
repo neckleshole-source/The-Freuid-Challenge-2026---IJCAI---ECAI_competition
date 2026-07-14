@@ -64,5 +64,7 @@ Expected Output Files:
 ​`submissions.csv`: Final inference data containing the following structure:
 
 |image id | image path | label |
+|-----|------|-----| 
+
 |ID_0921 | private_test/US_ID_0921.jpg | 0.984210 |
 |ID_0411 | private_test/DE_DL_0411.png | 0.001041 |
