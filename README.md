@@ -1,6 +1,7 @@
 # Identity Document Fraud & Forgery Detector
 
-An end-to-end computer vision and deep learning pipeline designed to detect bona-fide identity documents from fraudulent ones. This repository is specifically optimized to identify digital alterations (such as GenAI-driven multimodal edits) and physical-to-digital conversions (such as print-and-capture forgeries that bypass traditional digital watermark analysis).
+An end-to-end computer vision and deep learning pipeline designed to detect bona-fide identity documents from fraudulent ones.
+This repository is specifically optimized to identify digital alterations (such as GenAI-driven multimodal edits) and physical-to-digital conversions (such as print-and-capture forgeries that bypass traditional digital watermark analysis).
 
 ---
 
@@ -9,7 +10,7 @@ An end-to-end computer vision and deep learning pipeline designed to detect bona
 This program operates in three sequential phases:
 1. **Phase 1 (Specification Extraction):** Scans genuine and fraudulent directories to generate deep structural metadata and frequency domain analysis, outputting `true_specs.json` and `false_specs.json`.
 2. **Phase 2 (Model Training & Evaluation):** Trains an image-classification model (EfficientNet-B0) to output real-valued fraud probability scores. Performance is validated locally using a custom **FREUID Metric**.
-3. **Phase 3 (Production Inference):** Processes unseen target files, determines if the document is natively digital or a physical re-capture, extracts the country/type from file naming schemas, and exports results to a submission-ready `submissions.csv`.
+3.  **Phase 3 (Production Inference):** Processes unseen target files, determines if the document is natively digital or a physical re-capture, extracts the country/type from file naming schemas, and exports results to a submission-ready `submissions.csv`.
 
 ---
 
