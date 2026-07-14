@@ -18,14 +18,19 @@ This program operates in three sequential phases:
 ## 📁 Repository Structure
 
 ```text
-├── identity_detector.py      # Main pipeline script (Local or Kaggle run)
+├── code
+     ├── evaluation 
+          ├── identity_detector.py      # Main pipeline script (Local or Kaggle run)
+├── data 
 ├── true_documents/           # Directory with authentic IDs / Drivers Licenses
 ├── false_documents/          # Directory with manipulated/counterfeit documents
 ├── test_documents/           # Directory with test target files for inference
 ├── true_labels.csv           # Label mapping for true documents (all 0s)
 ├── false_labels.csv          # Label mapping for false documents (all 1s)
 ├── README.md                 # Project Overview (This file)
+├── LISENCE                   # OSI-approved open-source license - MIT
 └── model.md                  # Deep Model and Feature Engineering Spec
+
 ```
 🔧 Installation & Requirements
 ​Ensure you have Python 3.8+ installed along with the required processing libraries:
