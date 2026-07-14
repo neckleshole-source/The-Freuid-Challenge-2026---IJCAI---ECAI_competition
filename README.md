@@ -37,7 +37,9 @@ If running inside a Kaggle Notebook, configure your notebook settings to use a G
 ​📊 The FREUID Metric
 ​The model's performance is strictly bound by the custom FREUID Score (where lower is better). The score combines global performance with performance at a strict production operating point.
 ​
+
 Mathematical Formulation
+
 ​AuDET (Area under the Detection Error Trade-off curve): Measures the global trade-off between False Rejection Rates (BPCER) and False Acceptance Rates (APCER).
 ​APCER @ 1% BPCER: Measures the Attack Presentation Classification Error Rate at a fixed 1\% False Alarm limit.
 ​We calculate "goodness" scores:
