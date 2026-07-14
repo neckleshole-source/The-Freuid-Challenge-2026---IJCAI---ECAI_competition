@@ -22,14 +22,15 @@ This program operates in three sequential phases:
      ├── evaluation 
           ├── identity_detector.py      # Main pipeline script (Local or Kaggle run)
 ├── data 
-├── true_documents/           # Directory with authentic IDs / Drivers Licenses
-├── false_documents/          # Directory with manipulated/counterfeit documents
-├── test_documents/           # Directory with test target files for inference
-├── true_labels.csv           # Label mapping for true documents (all 0s)
-├── false_labels.csv          # Label mapping for false documents (all 1s)
-├── README.md                 # Project Overview (This file)
-├── LISENCE                   # OSI-approved open-source license - MIT
-└── model.md                  # Deep Model and Feature Engineering Spec
+     ├── true_documents/           # Directory with authentic IDs / Drivers Licenses
+     ├── false_documents/          # Directory with manipulated/counterfeit documents
+     ├── test_documents/           # Directory with test target files for inference
+     ├── true_labels.csv           # Label mapping for true documents (all 0s)
+     ├── false_labels.csv          # Label mapping for false documents (all 1s)
+├── submissions.csv                # private-test folder result
+├── README.md                      # Project Overview (This file)
+├── LISENCE                        # OSI-approved open-source license - MIT
+└── model.md                       # Deep Model and Feature Engineering Spec
 
 ```
 🔧 Installation & Requirements
