@@ -45,10 +45,8 @@ Mathematical Formulation
 ​APCER @ 1% BPCER: Measures the Attack Presentation Classification Error Rate at a fixed 1\% False Alarm limit.
 ​We calculate "goodness" scores:
 
-$g_{\text{audet}} = 1 - AuDET$
-
-$$g_{\text{apcer}} = 1 - \text{APCER}_{@1\%\text{BPCER}}$$
-
+g_audet = 1 - AuDET
+g_apcer = 1 - APCER@1%BPCER
 
 The final score is the inverted harmonic mean of these values:
 $\text{FREUID} = 1 - \frac{2 \cdot g_{\text{audet}} \cdot g_{\text{apcer}}}{g_{\text{audet}} + g_{\text{apcer}}}$
