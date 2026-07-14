@@ -34,7 +34,9 @@ f_shift = np.fft.fftshift(f_transform)
 magnitude_spectrum = 20 * np.log(np.abs(f_shift) + 1)
 ```
 ​○ Genuine Documents: Show smooth spectral profiles.
+
 ○ ​Re-captured/Screen Documents: Exhibit high-frequency spikes corresponding to physical Moiré patterns.
+
 ​2. Laplacian Variance (Edge Sharpness Analysis)
 ​Natively digital uploads display high-frequency sharp borders. Physical print-and-capture processes degrade image crispness and introduce physical micro-blur. 
 We track this using the variance of a Laplacian kernel:
