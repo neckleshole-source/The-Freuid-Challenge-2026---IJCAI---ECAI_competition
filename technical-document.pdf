@@ -1,0 +1,31 @@
+Technical Design Document: Identity Document Fraud Detector
+
+​1. Executive Summary
+​This system is a hybrid computer vision and deep learning pipeline designed to distinguish between bona-fide (genuine) identity documents and fraudulent/counterfeit presentation attacks.
+​The system specifically targets two common fraud vectors:
+​Digital Manipulations: Generative AI edits or pixel-level document alterations.
+​Physical Presentation Attacks (Print-and-Capture): Physical document printouts re-photographed to bypass automated checks, which typically bypass digital-only watermark checks.
+
+​2. System Architecture
+​The pipeline is structured into three distinct, decoupled phases:
+​Phase 1: Metadata & Frequency Feature Extraction
+​Scans raw image directories and compiles structural and mathematical signatures into a JSON payload (true_specs.json and false_specs.json).
+​Fast Fourier Transform (FFT): Converts the image into the frequency domain to isolate unnatural periodic structures (such as Moiré patterns from digital screens or halftone printing grids).
+​Color Channels: Extracts color distribution shifts (RGB channel means and standard deviations).
+​Phase 2: Deep Learning Classifier
+​Trains a lightweight, high-performing convolutional network on labeled datasets.
+​Backbone: EfficientNet-B0 (pre-trained on ImageNet).
+​Output: Custom single-node Sigmoid head returning a continuous real-valued probability score \hat{y} \in [0, 1], where 1.0 represents a high-probability attack.
+​Phase 3: Physical vs. Digital Inference
+​Processes an unseen target folder (test_documents) to produce a final output.csv. It classifies the document type, extracts geographical metadata via file-naming schemas, and runs a heuristic "analog hole" check to determine if the document is natively digital or physically re-captured.
+​
+3. Core Mathematical Formulas
+​Laplacian Variance (Digital-Native vs. Re-capture Verification)
+​To bypass physical print-and-capture fraud, we evaluate high-frequency edge degradation using the variance of the Laplacian of the image (I):
+
+$\sigma^2 = \operatorname{Var}(\nabla^2 I)$
+
+$\text{Where: } \nabla^2 I = \frac{\partial^2 I}{\partial x^2} + \frac{\partial^2 I}{\partial y^2}$
+
+○ ​$\sigma^2 > 150$: Classed as a sharp, direct digital upload (is_digital = 1).
+​○ $\sigma^2 \le 150$: Classed as a soft, re-captured physical print (is_digital = 0).
