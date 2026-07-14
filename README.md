@@ -46,6 +46,7 @@ Mathematical Formulation
 ​We calculate "goodness" scores:
 
 $g_{\text{audet}} = 1 - AuDET$
+
 $$G_{\text{apcer}} = 1 - \text{APCER}_{@1\%\text{BPCER}}$$
 
 
