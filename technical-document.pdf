@@ -29,3 +29,54 @@ $\text{Where: } \nabla^2 I = \frac{\partial^2 I}{\partial x^2} + \frac{\partial^
 
 ○ ​$\sigma^2 > 150$: Classed as a sharp, direct digital upload (is_digital = 1).
 ​○ $\sigma^2 \le 150$: Classed as a soft, re-captured physical print (is_digital = 0).
+
+Performance Evaluation: The FREUID Metric
+​The model's operational readiness is validated using the custom FREUID Score (where lower is better). 
+This metric balances global model quality with a strict operational security threshold.
+
+1. Global Quality Score (g_{\text{audet}}): Based on the Area under the Detection Error Trade-off curve (AuDET).
+
+$g_{\text{audet}} = 1 - AuDET$
+
+2. Operational Quality Score (g_{\text{apcer}}): Measures the False Negative Rate (APCER) at a highly strict 1% False Positive Rate (BPCER) limit.
+
+$g_{\text{apcer}} = 1 - \operatorname{APCER}_{@1\%\text{BPCER}}$
+
+3. Harmonic Mean Optimization:
+
+$\text{FREUID} = 1 - \frac{2 \cdot g_{\text{audet}} \cdot g_{\text{apcer}}}{g_{\text{audet}} + g_{\text{apcer}}}$
+
+4. Input & Output Schema Map
+​Training Input Data Requirements
+​Images: Standard image formats (.png, .jpg, .jpeg).
+​CSV Labels: Two-column file (image_name, label), where 0 = \text{Genuine} and 1 = \text{Fraud}.
+
+Exported System Outputs
+
+1. Metadata Specs (true_specs.json / false_specs.json):
+
+```text
+{
+    "filename": "US_DL_sample.jpg",
+    "aspect_ratio": 1.586,
+    "blurriness_score": 240.15,
+    "frequency_fft_mean": 45.12
+}
+```
+Production Inference (output.csv):
+
+○ ​image id: Unique file identifier.
+○ ​label: Predicted probability score [0.0, 1.0].
+​○ is_digital: Boolean indicator (1 = \text{digital-native}, 0 = \text{physical re-capture}).
+○ ​type: Parsed identity type (e.g., US_DL, DE_ID).
+
+5. Execution Instructions
+​To run the end-to-end pipeline locally or inside Kaggle:
+
+1. Populate ./true_documents and ./false_documents with your respective dataset files.
+2. Ensure true_labels.csv and false_labels.csv are in the project root.
+3. Run the pipeline script:
+```text
+python identity_detector.py
+```
+
