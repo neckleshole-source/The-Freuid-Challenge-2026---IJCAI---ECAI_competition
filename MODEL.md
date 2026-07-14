@@ -40,9 +40,11 @@ magnitude_spectrum = 20 * np.log(np.abs(f_shift) + 1)
 ​2. Laplacian Variance (Edge Sharpness Analysis)
 ​Natively digital uploads display high-frequency sharp borders. Physical print-and-capture processes degrade image crispness and introduce physical micro-blur. 
 We track this using the variance of a Laplacian kernel:
+
 $\sigma^2 = \text{Var}(\nabla^2 I)$
-If ```\sigma^2```0 > 150, the file is classified as natively digital (is_digital = 1).
-​If ```\sigma^2``` \le 150, it has undergone a physical recapture step (is_digital = 0).
+
+If ```$\sigma^2$```0 > 150, the file is classified as natively digital (is_digital = 1).
+​If ```$\sigma^2$``` \le 150, it has undergone a physical recapture step (is_digital = 0).
 
 ​📈 Training and Validation Pipeline
 ​Optimization Parameters
