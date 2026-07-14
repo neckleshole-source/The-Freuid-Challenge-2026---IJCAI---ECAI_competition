@@ -1,6 +1,7 @@
 # Identity Document Fraud & Forgery Detector
 
 An end-to-end computer vision and deep learning pipeline designed to detect bona-fide identity documents from fraudulent ones.
+
 This repository is specifically optimized to identify digital alterations (such as GenAI-driven multimodal edits) and physical-to-digital conversions (such as print-and-capture forgeries that bypass traditional digital watermark analysis).
 
 ---
@@ -43,15 +44,12 @@ Mathematical Formulation
 ​AuDET (Area under the Detection Error Trade-off curve): Measures the global trade-off between False Rejection Rates (BPCER) and False Acceptance Rates (APCER).
 ​APCER @ 1% BPCER: Measures the Attack Presentation Classification Error Rate at a fixed 1\% False Alarm limit.
 ​We calculate "goodness" scores:
-```
-g_{{audet}} = 1 - AuDET
-g_{{apcer}} = 1 - APCER_{@1\%\{BPCER}}
-```
-The final score is the inverted harmonic mean of these values:
-```
-{FREUID} = 1 - \frac{2 \cdot g_{{audet}} \cdot g_{{apcer}}}{g_{{audet}} + g_{{apcer}}}
+$g_{\text{audet}} = 1 - AuDET$
+$g_{\text{apcer}} = 1 - APCER_{@1\%\text{BPCER}}$
 
-```
+The final score is the inverted harmonic mean of these values:
+$\text{FREUID} = 1 - \frac{2 \cdot g_{\text{audet}} \cdot g_{\text{apcer}}}{g_{\text{audet}} + g_{\text{apcer}}}$
+
 🚀 Execution Guide
 ​To run the entire pipeline on your local machine:
 ​Place your datasets inside /kaggle/working/selected_true_cards, /kaggl/working/selected_false_cards/, and /kaggle/input/the-freuid-challenge-2026-ijcai-ecai/private-test/private-test.
