@@ -47,7 +47,7 @@ Mathematical Formulation
 
 $g_{\text{audet}} = 1 - AuDET$
 
-$$G_{\text{apcer}} = 1 - \text{APCER}_{@1\%\text{BPCER}}$$
+$$g_{\text{apcer}} = 1 - \text{APCER}_{@1\%\text{BPCER}}$$
 
 
 The final score is the inverted harmonic mean of these values:
