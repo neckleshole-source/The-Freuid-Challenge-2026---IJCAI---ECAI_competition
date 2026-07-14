@@ -50,15 +50,22 @@ If ```\sigma^2```0 > 150, the file is classified as natively digital (is_digital
 
 Train / Validation Partitioning
 ​To ensure our calculated FREUID Score is mathematically sound and reflects general performance, the combined training data is systematically split:
-
-                  [ Combined Input Data ]
-                             │
-            ┌────────────────┴────────────────┐
-            ▼                                 ▼
-   [ Training Set (80%) ]           [ Validation Set (20%) ]
-            │                                 │
-            ▼                                 ▼
-    Gradient Descent                   Model Evaluation
-  (Update model weights)             (Calculate FREUID metric)
+```
+                  [ Labeled Ground Truth Data ]
+                               │
+            ┌──────────────────┴──────────────────┐
+            ▼                                     ▼
+   [ Training Split (80%) ]              [ Validation Split (20%) ]
+            │                                     │
+            ▼                                     ▼
+   Forward & Backward Pass                  Model Inference
+     (Loss: BCELoss)                   Generate Predictions (y_scores)
+            │                                     │
+            ▼                                     ▼
+     Update Weights                          Calculate metric:
+   (Optimizer: AdamW)                     - AuDET
+                                          - APCER @ 1% BPCER
+                                          - Final FREUID Score
+```
 
 During validation evaluation, prediction outputs are aggregated across the unseen subset, and the DET curve is calculated to measure real production readiness.
