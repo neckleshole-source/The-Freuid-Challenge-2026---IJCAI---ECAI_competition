@@ -7,11 +7,12 @@ matplotlib            # Installs the latest available version
 json
 glob
 re
-shutil
+numpy
+pandas
 cv2
 torch
 torch.nn
-Dataset, DataLoader, random_split
-models, transforms
-det_curve
-Image
+torch.utils.data
+torchvision
+scikit-learn
+pillow
