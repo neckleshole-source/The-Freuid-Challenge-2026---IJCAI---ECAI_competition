@@ -1,7 +1,6 @@
 # Example Dockerfile
-FROM python:3.11-slim
+FROM node:alpine
 WORKDIR /app
-COPY requirements.txt
-RUN pip install -r requirements.txt
 COPY . .
-CMD ["python", "identity_detector.py"]
+RUN npm install
+CMD ["node", "index.js"]
