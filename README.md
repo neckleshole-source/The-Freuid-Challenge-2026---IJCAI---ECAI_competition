@@ -44,6 +44,7 @@ Mathematical Formulation
 ​AuDET (Area under the Detection Error Trade-off curve): Measures the global trade-off between False Rejection Rates (BPCER) and False Acceptance Rates (APCER).
 ​APCER @ 1% BPCER: Measures the Attack Presentation Classification Error Rate at a fixed 1\% False Alarm limit.
 ​We calculate "goodness" scores:
+
 $g_{\text{audet}} = 1 - AuDET$
 $g_{\text{apcer}} = 1 - APCER_{@1\%\text{BPCER}}$
 
