@@ -1,26 +1,4 @@
 
-
-    print(f"\n⚡ Processing True Cards (label < 0.5)...")
-    true_copied = copy_card_images(true_df, true_folder)
-    if not true_df.empty:
-        true_df[required_columns].to_csv(output_true_csv, index=False)
-        print(f"📊 Rows added to '{os.path.basename(output_true_csv)}': {len(true_df)}")
-        print(f"🖼️ Images successfully copied to '{true_folder}': {true_copied}")
-    else:
-        print("ℹ️ No true cards found meeting the criteria.")
-
-    # 8. Process False Cards
-    print(f"\n⚡ Processing False Cards (label >= 0.5)...")
-    false_copied = copy_card_images(false_df, false_folder)
-    if not false_df.empty:
-        false_df[required_columns].to_csv(output_false_csv, index=False)
-        print(f"📊 Rows added to '{os.path.basename(output_false_csv)}': {len(false_df)}")
-        print(f"🖼️ Images successfully copied to '{false_folder}': {false_copied}")
-    else:
-        print("ℹ️ No false cards found meeting the criteria.")
-
-    print(f"\n✅ All execution operations completed successfully!")
-
 # --- CONFIGURATION AND PATH SETTINGS ---
 if __name__ == "__main__":
     # Input paths
