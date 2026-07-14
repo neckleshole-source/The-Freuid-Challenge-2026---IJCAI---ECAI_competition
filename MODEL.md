@@ -51,7 +51,9 @@ If $\sigma^2 > 150$, the file is classified as natively digital (is_digital = 1)
 ​Optimization Parameters
 
 ​○ Optimizer: AdamW (Learning Rate: $1\times10^{-4}$ for stable gradient updates during fine-tuning).
+
 ​○ Loss Function: Binary Cross Entropy Loss (BCELoss).
+
 ​○ Batch Size: 16 (optimized for GPU VRAM limits).
 
 Train / Validation Partitioning
