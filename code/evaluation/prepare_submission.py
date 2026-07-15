@@ -295,7 +295,7 @@ def run_production_inference(model, test_folder_path, save_csv_path):
                 
                 # 3. Metadata Parse Strategy for Geography and Type classification
                 fn_upper = os.path.basename(path).upper()
-                country = "US" if "US" in fn_upper else "DE" if "DE" in fn_upper else "UNKNOWN"
+                country = "US" if "US" in fn_upper else "DE" if "DE" in fn_upper else "EG" if "EG" in fn_upper else "MU" if "MU" in fn_upper else "GN" if "GN" in fn_upper else "BJ" if "BJ" in fn_upper else "MZ" if "MZ" in fn_upper else "UNKNOWN"
                 doc_type = "DL" if any(x in fn_upper for x in ["DL", "DRIVER", "LICENSE"]) else "ID"
                 
             except Exception as e:
