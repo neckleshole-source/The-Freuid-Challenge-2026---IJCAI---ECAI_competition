@@ -77,3 +77,8 @@ Expected Output Files:
 ​`submissions.csv`: Final inference data containing the following structure:
 
 |image id | image path | label |
+
+# Program runned fully local
+
+<img width="1431" height="2499" alt="SmartSelect_20260718_000405_Pydroid 3" src="https://github.com/user-attachments/assets/1d13d977-a340-4c4b-827f-1578bb608d28" />
+
